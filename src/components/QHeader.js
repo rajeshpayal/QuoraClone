@@ -9,7 +9,7 @@ import { Avatar, Button, Input } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import db, { auth } from "../firebase";
-import { ExpandMore, Link } from "@material-ui/icons";
+
 import firebase from "firebase";
 
 Modal.setAppElement("#root");
@@ -102,7 +102,7 @@ function QHeader() {
               placeholder="Start your question with 'What', 'How', 'Why', etc. "
             />
             <div className="modal__fieldLink">
-              <Link />
+              
               <input
                 value={inputUrl}
                 onChange={(e) => setInputUrl(e.target.value)}
