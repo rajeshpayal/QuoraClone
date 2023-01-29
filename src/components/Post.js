@@ -1,11 +1,7 @@
 import { Avatar } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import "./Post.css";
-import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
-import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
-import RepeatOutlinedIcon from "@material-ui/icons/RepeatOutlined";
-import ChatBubbleOutlineOutlinedIcon from "@material-ui/icons/ChatBubbleOutlineOutlined";
-import { MoreHorizOutlined, ShareOutlined } from "@material-ui/icons";
+
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import Modal from "react-modal";
@@ -164,19 +160,6 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
           ))}
         </div>
         <img src={imageUrl} alt="" />
-      </div>
-      <div className="post__footer">
-        <div className="post__footerAction">
-          <ArrowUpwardOutlinedIcon />
-          <ArrowDownwardOutlinedIcon />
-        </div>
-
-        <RepeatOutlinedIcon />
-        <ChatBubbleOutlineOutlinedIcon />
-        <div className="post__footerLeft">
-          <ShareOutlined />
-          <MoreHorizOutlined />
-        </div>
       </div>
     </div>
   );

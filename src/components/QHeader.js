@@ -1,11 +1,7 @@
 import React, { useState } from "react";
-import HomeIcon from "@material-ui/icons/Home";
-import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined";
-import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedInOutlined";
-import PeopleAltOutlinedIcon from "@material-ui/icons/PeopleAltOutlined";
-import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined";
+
 import SearchIcon from "@material-ui/icons/Search";
-import LanguageIcon from "@material-ui/icons/Language";
+
 import Modal from "react-modal";
 
 import "./QHeader.css";
@@ -51,23 +47,7 @@ function QHeader() {
           alt=""
         />
       </div>
-      <div className="qHeader__icons">
-        <div className="active qHeader__icon">
-          <HomeIcon />
-        </div>
-        <div className="qHeader__icon">
-          <FeaturedPlayListOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <AssignmentTurnedInOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <PeopleAltOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <NotificationsOutlinedIcon />
-        </div>
-      </div>
+
       <div className="qHeader__input">
         <SearchIcon />
         <input type="text" placeholder="Search Quora" />
@@ -84,7 +64,7 @@ function QHeader() {
             }
           />
         </div>
-        <LanguageIcon />
+
         <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
         <Modal
           isOpen={IsmodalOpen}
@@ -103,10 +83,6 @@ function QHeader() {
             },
           }}
         >
-          <div className="modal__title">
-            <h5>Add Question</h5>
-            <h5>Share Link</h5>
-          </div>
           <div className="modal__info">
             <Avatar
               className="avatar"
@@ -117,11 +93,6 @@ function QHeader() {
               }
             />
             <p>{user.disPlayName ? user.disPlayName : user.email} asked</p>
-            <div className="modal__scope">
-              <PeopleAltOutlinedIcon />
-              <p>Public</p>
-              <ExpandMore />
-            </div>
           </div>
           <div className="modal__Field">
             <Input

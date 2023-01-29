@@ -1,12 +1,13 @@
 import firebase from "firebase";
 const firebaseConfig = {
-  apiKey: "AIzaSyDG2mnrOkS0tafAjU1SqzXfaJS7AMKMSMg",
-  authDomain: "quora-clone-akky.firebaseapp.com",
-  projectId: "quora-clone-akky",
-  storageBucket: "quora-clone-akky.appspot.com",
-  messagingSenderId: "902318949999",
-  appId: "1:902318949999:web:8df2b97a20eece0209ef9a",
-  measurementId: "G-LJBYVXT22Z",
+  apiKey: "AIzaSyArGeHaWkZ3wIvfXJUROUKdxZfEw73j5HM",
+  authDomain: "quora-clone-1b761.firebaseapp.com",
+  databaseURL: "https://quora-clone-1b761-default-rtdb.firebaseio.com",
+  projectId: "quora-clone-1b761",
+  storageBucket: "quora-clone-1b761.appspot.com",
+  messagingSenderId: "5474927088",
+  appId: "1:5474927088:web:7dff5a7f8b5e9b5d575d35",
+  measurementId: "G-RS6THMYKEZ",
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);

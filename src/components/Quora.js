@@ -2,7 +2,7 @@ import React from "react";
 import Feed from "./Feed.js";
 import QHeader from "./QHeader";
 import "./Quora.css";
-import Sidebar from "./Sidebar";
+
 import Widget from "./Widget.js";
 
 function Quora() {
@@ -10,7 +10,6 @@ function Quora() {
     <div className="quora">
       <QHeader />
       <div className="quora__content">
-        <Sidebar />
         <Feed />
         <Widget />
       </div>
