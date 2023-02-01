@@ -1,5 +1,10 @@
+.quora {
+  background-color: aqua;
+  /* max-width: fit-content; */
+}
 .quora__content {
   display: flex;
   justify-content: center;
   margin-top: 50px;
+  flex-wrap: wrap;
 }

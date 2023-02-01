@@ -25,7 +25,11 @@ function QHeader() {
   const handleQuestion = (e) => {
     e.preventDefault();
     setIsModalOpen(false);
-
+    if (input === "") {
+      alert("Please enter a question");
+      setIsModalOpen(false);
+      return;
+    }
     if (questionName) {
       db.collection("questions").add({
         user: user,
@@ -41,45 +45,49 @@ function QHeader() {
 
   return (
     <div className="qHeader">
-      <div className="qHeader__logo">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
-          alt=""
-        />
-      </div>
-
-      <div className="qHeader__input">
-        <SearchIcon />
-        <input type="text" placeholder="Search Quora" />
-      </div>
-      <div className="qHeader__Rem">
-        <div className="qHeader__avatar">
-          <Avatar
-            onClick={() => auth.signOut()}
-            className="Avatar"
-            src={
-              user.photo
-                ? user.photo
-                : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
-            }
+    
+        <div className="qHeader__logo">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
+            alt=""
           />
         </div>
 
-        <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+        <div className="qHeader__input">
+          <SearchIcon />
+          <input type="text" placeholder="Search Quora" />
+        </div>
+        <div className="qHeader__Rem">
+          <div className="qHeader__avatar">
+            <Avatar
+              onClick={() => auth.signOut()}
+              className="Avatar"
+              src={
+                user.photo
+                  ? user.photo
+                  : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+              }
+            />
+          </div>
+
+          <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+        
         <Modal
           isOpen={IsmodalOpen}
           onRequestClose={() => setIsModalOpen(false)}
           shouldCloseOnOverlayClick={false}
           style={{
             overlay: {
-              width: 700,
-              height: 600,
+              minWidth: 200,
+              maxWidth: 500,
+              maxHeight: 500,
+              minHeight: 200,
               backgroundColor: "rgba(0,0,0,0.8)",
               zIndex: "1000",
               top: "50%",
-              left: "50%",
+              left: "60%",
               marginTop: "-300px",
-              marginLeft: "-350px",
+              marginLeft: "-300px",
             },
           }}
         >
@@ -102,7 +110,6 @@ function QHeader() {
               placeholder="Start your question with 'What', 'How', 'Why', etc. "
             />
             <div className="modal__fieldLink">
-              
               <input
                 value={inputUrl}
                 onChange={(e) => setInputUrl(e.target.value)}

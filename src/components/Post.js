@@ -35,6 +35,12 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
   const handleAnswer = (e) => {
     e.preventDefault();
 
+    if (answer === "") {
+      alert("Please enter the answer");
+      setIsModalOpen(false);
+      return;
+    }
+
     if (questionId) {
       db.collection("questions").doc(questionId).collection("answer").add({
         user: user,
@@ -85,14 +91,16 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
             shouldCloseOnOverlayClick={false}
             style={{
               overlay: {
-                width: 680,
-                height: 550,
+                minWidth: 200,
+                maxWidth: 500,
+                maxHeight: 500,
+                minHeight: 200,
                 backgroundColor: "rgba(0,0,0,0.8)",
                 zIndex: "1000",
                 top: "50%",
                 left: "50%",
-                marginTop: "-250px",
-                marginLeft: "-350px",
+                marginTop: "-300px",
+                marginLeft: "-270px",
               },
             }}
           >

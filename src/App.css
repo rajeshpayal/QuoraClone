@@ -2,5 +2,6 @@
   margin: 0;
   background-color: rgb(241, 241, 241);
   height: auto;
-  width: auto;
+  min-width: fit-content;
+  max-width: auto;
 }
