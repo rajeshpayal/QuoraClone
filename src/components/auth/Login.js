@@ -8,6 +8,10 @@ function Login() {
   const [password, setPassword] = useState("");
 
   const signIn = () => {
+    if (email === "" || password === "") {
+      alert("Please enter your email and password");
+      return;
+    }
     auth.signInWithPopup(provider).catch((e) => {
       alert(e.message);
     });
@@ -15,6 +19,10 @@ function Login() {
 
   const handleSignIn = (e) => {
     e.preventDefault();
+    if (email === "" || password === "") {
+      alert("Please enter your email and password");
+      return;
+    }
 
     auth
       .signInWithEmailAndPassword(email, password)

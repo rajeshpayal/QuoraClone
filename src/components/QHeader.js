@@ -38,7 +38,6 @@ function QHeader() {
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
     }
-
     setInput("");
     setInputUrl("");
   };
